@@ -4,6 +4,7 @@ const target  = 'https://oauth2.googleapis.com/token'
 
 export async function load({ url ,fetch ,platform }) {
   const code          = url.searchParams.get('code')
+  consol.log(code)
   const client_id     = '1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com'
   const client_secret = CLIENT_SECRET
   const grant_type    = 'authorization_code'
