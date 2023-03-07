@@ -8,7 +8,7 @@
       'https://www.googleapis.com/auth/userinfo.profile'
   ]
   const scope       = '&scope=' + scopes.join(' ')
-  const redirect    = '&redirect_uri=http://127.0.0.1:5173/callback'
+  const redirect    = '&redirect_uri=https://fpl-tp.pages.dev/callback'
   const access      = '&access_type=offline'
   const include     = '&include_granted_scopes=true'
   const rest        = '&response_type=code&state=1111'
