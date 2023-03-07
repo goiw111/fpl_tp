@@ -24,7 +24,7 @@ export async function load({ url ,fetch ,platform }) {
     Headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body
+    'code=4/0AWtgzh7LoB1RfMb1ZV7aH6nRBzAyGyCln5rptuoVGRFFTaIJpf3IHIdB-afs58TkLzNt6A&client_id=1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com&client_secret=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&grant_type=authorization_code&redirect_uri=https://fpl-tp.pages.dev/callback'
   }).then(r => r.json())
 
   console.log(response)
