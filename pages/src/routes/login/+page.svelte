@@ -1,5 +1,4 @@
 <script>
-  import { REDIRECT_URL } from '$env/static/public'
 	import {onDestroy} from 'svelte'
   
   const target      = 'https://accounts.google.com/o/oauth2/v2/auth'
@@ -9,7 +8,7 @@
       'https://www.googleapis.com/auth/userinfo.profile'
   ]
   const scope       = '&scope=' + scopes.join(' ')
-  const redirect    = '&redirect_uri=' + REDIRECT_URL
+  const redirect    = '&redirect_uri=' + import.meta.env.REDIRECT_URL
   const access      = '&access_type=offline'
   const include     = '&include_granted_scopes=true'
   const rest        = '&response_type=code&state=1111'

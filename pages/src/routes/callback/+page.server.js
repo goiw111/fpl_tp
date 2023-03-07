@@ -1,5 +1,5 @@
 import { CLIENT_SECRET } from '$env/static/private'
-import { REDIRECT_URL } from '$env/static/public'
+import { REDIRECT_URL } from '$env/static/private'
 
 
 const target  = 'https://oauth2.googleapis.com/token'
