@@ -37,7 +37,8 @@ export async function load({ url ,fetch ,platform }) {
     },
   }).then(r => r.json())
 
-  await platform.env.SESSION.put(info.id,info)
+  const session = await platform.env.SESSION
+  console.log(session)
 
   return {
     
