@@ -16,6 +16,8 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
+  console.log(code)
+
   const response = await fetch(target,{
     method: "POST",
     Headers: {
