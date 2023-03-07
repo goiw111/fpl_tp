@@ -1,5 +1,5 @@
 <script>
-  import { REDIRECT_URL } from '$env/static/private'
+  import { REDIRECT_URL } from '$env/static/public'
 	import {onDestroy} from 'svelte'
   
   const target      = 'https://accounts.google.com/o/oauth2/v2/auth'
