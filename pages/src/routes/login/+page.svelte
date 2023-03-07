@@ -14,6 +14,7 @@
   const rest        = '&response_type=code&state=1111'
   
   const url = target + client_id + scope + redirect + access + include + rest
+  console.log(url)
 
   var win
 
