@@ -1,5 +1,5 @@
 import { CLIENT_SECRET } from '$env/static/private'
-import { REDIRECT_URL } from '$env/static/private'
+import { VITE_REDIRECT_URL } from '$env/static/private'
 
 
 const target  = 'https://oauth2.googleapis.com/token'
@@ -9,7 +9,7 @@ export async function load({ url ,fetch ,platform }) {
   const client_id     = '1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com'
   const client_secret = CLIENT_SECRET
   const grant_type    = 'authorization_code'
-  const redirect_uri  = REDIRECT_URL  
+  const redirect_uri  = VITE_REDIRECT_URL  
   const body = new URLSearchParams({
     code,
     client_id,
