@@ -3,12 +3,12 @@ import { CLIENT_SECRET } from '$env/static/private'
 
 const target  = 'https://oauth2.googleapis.com/token'
 
-export async function load({ url ,fetch }) {
+export async function load({ url ,fetch ,platform }) {
   const code          = url.searchParams.get('code')
   const client_id     = '1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com'
   const client_secret = CLIENT_SECRET
   const grant_type    = 'authorization_code'
-  const redirect_uri  = 'http://127.0.0.1:5173/callback'
+  const redirect_uri  = 'https://fpl-tp.pages.dev/callback'
   
   const body = new URLSearchParams({
     code,
@@ -37,7 +37,7 @@ export async function load({ url ,fetch }) {
     },
   }).then(r => r.json())
 
-  console.log(info)
+  platform.env.SESSION.put(info.id,info)
 
   return {
     
