@@ -9,7 +9,7 @@ export async function load({ url ,fetch ,platform }) {
   const grant_type    = 'authorization_code'
   const redirect_uri  = import.meta.env.VITE_REDIRECT_URL 
 
-  const body = new URLSearchParams({
+  const data = new URLSearchParams({
     code,
     client_id,
     client_secret,
@@ -17,14 +17,18 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
-  console.log(body.toString())
+  const _url = new URL(target)
+  for (const [key, value] of data.entries()) {
+    _url.searchParams.set(key, value)
+  }
 
-  const response = await fetch(target,{
+  console.log(_url)
+
+  const response = await fetch(_url,{
     method: "POST",
     Headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body
+    }
   }).then(r => r.json())
 
   console.log(response)
