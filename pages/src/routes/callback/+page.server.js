@@ -8,7 +8,7 @@ export async function load({ url ,fetch ,platform }) {
   const client_secret = CLIENT_SECRET
   const grant_type    = 'authorization_code'
   const redirect_uri  = import.meta.env.VITE_REDIRECT_URL 
-  const body = new URLSearchParams({
+  const data = new URLSearchParams({
     code,
     client_id,
     client_secret,
@@ -16,7 +16,9 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
-  console.log(body.toString())
+  const body = decodeURI(data.toString())
+
+  console.log(body)
 
   const response = await fetch(target,{
     method: "POST",
