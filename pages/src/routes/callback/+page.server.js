@@ -16,7 +16,6 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
-  console.log(code)
 
   const response = await fetch(target,{
     method: "POST",
@@ -26,6 +25,8 @@ export async function load({ url ,fetch ,platform }) {
     body
   }).then(r => r.json())
 
+  console.log(response)
+
   const info = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
     method: 'GET',
     headers: {
@@ -34,6 +35,8 @@ export async function load({ url ,fetch ,platform }) {
       'Content-Type': 'application/json'
     },
   }).then(r => r.json())
+
+  console.log(info)
 
   await platform.env.SESSION.put(info.id,JSON.stringify(info))
   const session = await platform.env.SESSION.get(info.id)
