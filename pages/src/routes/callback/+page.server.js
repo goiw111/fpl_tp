@@ -1,6 +1,6 @@
 import { CLIENT_SECRET } from '$env/static/private'
 
-const target  = 'https://oauth2.googleapis.com/token'
+const target  = 'https://www.googleapis.com/oauth2/v4/token'
 
 export async function load({ url ,fetch ,platform }) {
   const code          = url.searchParams.get('code')
@@ -9,7 +9,7 @@ export async function load({ url ,fetch ,platform }) {
   const grant_type    = 'authorization_code'
   const redirect_uri  = import.meta.env.VITE_REDIRECT_URL 
 
-  const data = new URLSearchParams({
+  const body = new URLSearchParams({
     code,
     client_id,
     client_secret,
@@ -17,9 +17,8 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
-  console.log(data.toString())
+  console.log(body.toString())
 
-  const body = 'code=4/0AWtgzh7LoB1RfMb1ZV7aH6nRBzAyGyCln5rptuoVGRFFTaIJpf3IHIdB-afs58TkLzNt6A&client_id=1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com&client_secret=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&grant_type=authorization_code&redirect_uri=https://fpl-tp.pages.dev/callback';
   const response = await fetch(target,{
     method: "POST",
     Headers: {
