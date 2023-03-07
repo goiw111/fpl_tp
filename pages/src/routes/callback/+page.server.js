@@ -21,6 +21,7 @@ export async function load({ url ,fetch ,platform }) {
   const response = await fetch(target,{
     method: "POST",
     Headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body
