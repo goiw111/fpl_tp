@@ -7,7 +7,7 @@ export async function load({ url ,fetch ,platform }) {
   const client_id     = '1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com'
   const client_secret = CLIENT_SECRET
   const grant_type    = 'authorization_code'
-  const redirect_uri  = import.meta.env.VITE_REDIRECT_URL 
+  const redirect_uri  = 'https://fpl-tp.pages.dev/callback' 
 
   const body = new URLSearchParams({
     code,
