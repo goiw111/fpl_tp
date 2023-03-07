@@ -25,7 +25,7 @@ export async function load({ url ,fetch ,platform }) {
     body
   }).then(r => r.json())
 
-  console.log(response)
+  console.log(response.access_token)
 
   const info = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
     method: 'GET',
