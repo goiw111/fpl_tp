@@ -1,0 +1,19 @@
+{
+  "name": "fpl_tp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"pages:dev": "npm run dev --prefix ./pages",
+		"pages:build": "npm run build --prefix ./pages",
+		"pages:preview": "npm run preview --prefix ./pages",
+		"pages:check": "npm run check --prefix ./pages",
+		"pages:check:watch": "npm run check:watch --prefix ./pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "author": "sohayl",
+  "license": "ISC"
+}
