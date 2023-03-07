@@ -16,6 +16,7 @@ export async function load({ url ,fetch ,platform }) {
     redirect_uri,
   })
 
+  console.log(body)
 
   const response = await fetch(target,{
     method: "POST",
@@ -25,7 +26,7 @@ export async function load({ url ,fetch ,platform }) {
     body
   }).then(r => r.json())
 
-  console.log(response.access_token)
+  console.log(response)
 
   const info = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
     method: 'GET',
