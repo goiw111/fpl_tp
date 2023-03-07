@@ -8,7 +8,7 @@
       'https://www.googleapis.com/auth/userinfo.profile'
   ]
   const scope       = '&scope=' + scopes.join(' ')
-  const redirect    = '&redirect_uri=' + import.meta.env.REDIRECT_URL
+  const redirect    = '&redirect_uri=' + import.meta.env.VITE_REDIRECT_URL
   const access      = '&access_type=offline'
   const include     = '&include_granted_scopes=true'
   const rest        = '&response_type=code&state=1111'
