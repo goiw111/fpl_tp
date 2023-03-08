@@ -22,8 +22,6 @@ export async function load({ url ,fetch ,platform }) {
     _url.searchParams.set(key, value)
   }
 
-  console.log(_url)
-
   const response = await fetch(_url,{
     method: "POST",
     Headers: {
@@ -31,7 +29,6 @@ export async function load({ url ,fetch ,platform }) {
     }
   }).then(r => r.json())
 
-  console.log(response)
 
   const info = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
     method: 'GET',
@@ -42,12 +39,12 @@ export async function load({ url ,fetch ,platform }) {
     },
   }).then(r => r.json())
 
-  console.log(info)
+  const user = {
+    ...info,
+    ...response
+  }
 
-  await platform.env.SESSION.put(info.id,JSON.stringify(info))
-  const session = await platform.env.SESSION.get(info.id)
-
-  console.log(session)
+  await platform.env.SESSION.put(info.id,JSON.stringify(user))
 
   return {
     
