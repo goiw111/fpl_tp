@@ -5,7 +5,8 @@
   const client_id   = '?client_id=1057658084984-oku26m2qmlrhbifmq6t2ocbd2cgda3ll.apps.googleusercontent.com'
   const scopes      = [
       'https://www.googleapis.com/auth/spreadsheets.readonly',
-      'https://www.googleapis.com/auth/userinfo.profile'
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email'
   ]
   const scope       = '&scope=' + scopes.join(' ')
   const redirect    = '&redirect_uri=' + import.meta.env.VITE_REDIRECT_URL
